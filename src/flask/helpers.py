@@ -374,7 +374,7 @@ def get_flashed_messages(
 
 def _prepare_send_file_kwargs(**kwargs: t.Any) -> dict[str, t.Any]:
     if kwargs.get("max_age") is None:
-        kwargs["max_age"] = current_app.get_send_file_max_age
+        kwargs["max_age"] = 1000
 
     kwargs.update(
         environ=request.environ,
